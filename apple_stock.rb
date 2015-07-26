@@ -12,3 +12,59 @@ Write an efficient algorithm for computing the best profit I could have made fro
 No "shorting"—you must buy before you sell. You may not buy and sell in the same time step (at least 1 minute must pass).
 =end 
 
+def best_deal (stock_prices_array)
+	largest = 0
+	smallest = stock_prices_array[0]
+
+	for item in stock_prices_array
+		if item > largest
+			largest = item
+		end
+		if item < smallest
+			smallest = item
+		end	
+	end	
+	
+	return largest - smallest		
+
+end
+
+
+
+
+
+
+def best_deal (stock_prices_array)
+	difference = 0
+
+	for outer_time in stock_prices_array
+		for inner_time in stock_prices_array
+			earlier_time = stock_prices_array.min
+			return diff if diff > difference
+		end
+	end		
+end	
+
+
+
+
+def best_deal (stock_prices_array)
+	profit = 0
+	lowest_price = 0
+
+	for prices in stock_prices_array
+		if prices < lowest_price
+			return lowest_price
+		end
+	end
+
+	for prices in stock_prices_array
+		difference = prices - lowest_price		
+		if difference > profit
+			profit = difference
+		end
+	end
+
+	return profit
+end
+
